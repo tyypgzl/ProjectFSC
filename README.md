@@ -1,16 +1,17 @@
-# fsc_project
+# Valorant Wiki
 
-A new Flutter project.
+Yeni Flutter projem çok fazla zaman geçidiğim bir oyun olan valorant. Oyun hakkında bilgilendirici içerikler bulunan projem gelişmeye açık ve geliştirmeye devam edeceğim.
 
-## Getting Started
+## Proje Hakkinda
+Uygulama da kullanığım verileri Firebase alternatifi olan [Supabase](https://supabase.io/)'i kullandım. Supabase sql veritabanı kullanıyor. Flutter ile kulanımı gayet kolay ve sitesinde akıcı bir şekilde anlatılmıştır.
 
-This project is a starting point for a Flutter application.
+## Paketler
+Onboard Screen tasarımı için [Introduction Screen](https://pub.dev/packages/introduction_screen) paketi
+Karakter sayfasında slider card tasarımı için [Carousel Slider](https://pub.dev/packages/carousel_slider) paketi
+Supabase ile bağlantı kurmak için [Supabase](https://pub.dev/packages/supabase) paketini kullandım. 
 
-A few resources to get you started if this is your first Flutter project:
+## Font 
+Projede [Comforta](https://www.dafont.com/comfortaa.font) fontunu kullandım.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
