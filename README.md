@@ -1,6 +1,7 @@
 # Valorant Wiki
 
-Yeni Flutter projem çok fazla zaman geçidiğim bir oyun olan valorant. Oyun hakkında bilgilendirici içerikler bulunan projem gelişmeye açık ve geliştirmeye devam edeceğim.
+
+Yeni Flutter projem çok fazla zaman geçidiğim bir oyun olan **Valorant**. Oyun hakkında bilgilendirici içerikler,haberler bulunan projem gelişmeye açık ve geliştirmeye devam edeceğim.
 
 ## Proje Hakkinda
 Uygulama da kullanığım verileri Firebase alternatifi olan [Supabase](https://supabase.io/)'i kullandım. Supabase sql veritabanı kullanıyor. Flutter ile kulanımı gayet kolay ve sitesinde akıcı bir şekilde anlatılmıştır.
