@@ -28,7 +28,7 @@ class CharacterDetailView extends StatelessWidget {
             children: [
               getSizedBoxHeight(size.height * .03),
               Text(
-                "Biografi",
+                "Biyografi",
                 style: getTextStyle(
                     color: AppColor.darkPrimaryRedColor, fontSize: 24),
               ),
@@ -50,10 +50,10 @@ class CharacterDetailView extends StatelessWidget {
                     color: AppColor.darkPrimaryColor,
                   ),
                   SizedBox(
-                    width: size.width * .05,
+                    width: size.width * .04,
                   ),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
@@ -61,12 +61,12 @@ class CharacterDetailView extends StatelessWidget {
                             "İsim: ",
                             style: getTextStyle(
                                 color: AppColor.darkPrimaryRedColor,
-                                fontSize: 24),
+                                fontSize: 22),
                           ),
                           Text(
                             karakter.isim.toString(),
                             style: getTextStyle(
-                                color: AppColor.darkPrimaryColor, fontSize: 20),
+                                color: AppColor.darkPrimaryColor, fontSize: 18),
                           )
                         ],
                       ),
@@ -77,12 +77,12 @@ class CharacterDetailView extends StatelessWidget {
                             "Ülke: ",
                             style: getTextStyle(
                                 color: AppColor.darkPrimaryRedColor,
-                                fontSize: 24),
+                                fontSize: 22),
                           ),
                           Text(
                             karakter.ulke.toString(),
                             style: getTextStyle(
-                                color: AppColor.darkPrimaryColor, fontSize: 20),
+                                color: AppColor.darkPrimaryColor, fontSize: 18),
                           )
                         ],
                       ),
@@ -93,13 +93,13 @@ class CharacterDetailView extends StatelessWidget {
                             "Rol: ",
                             style: getTextStyle(
                                 color: AppColor.darkPrimaryRedColor,
-                                fontSize: 24),
+                                fontSize: 22),
                           ),
                           getSizedBoxHeight(10),
                           Text(
                             karakter.rol.toString(),
                             style: getTextStyle(
-                                color: AppColor.darkPrimaryColor, fontSize: 24),
+                                color: AppColor.darkPrimaryColor, fontSize: 18),
                           ),
                         ],
                       ),
@@ -158,7 +158,7 @@ Widget getSkillsColumn({
           children: [
             Container(
               width: size.width * .58,
-              height: size.height * .12,
+              height: size.height * .1,
               margin: EdgeInsets.symmetric(horizontal: size.width * .01),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -177,8 +177,8 @@ Widget getSkillsColumn({
             ),
             Container(
               padding: const EdgeInsets.all(20),
-              height: size.height * .12,
-              width: size.height * .12,
+              height: size.height * .1,
+              width: size.height * .1,
               margin: EdgeInsets.symmetric(horizontal: size.width * .01),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -197,7 +197,7 @@ Widget getSkillsColumn({
           children: [
             Container(
               width: size.width * .58,
-              height: size.height * .12,
+              height: size.height * .1,
               margin: EdgeInsets.symmetric(horizontal: size.width * .01),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -216,8 +216,8 @@ Widget getSkillsColumn({
             ),
             Container(
               padding: const EdgeInsets.all(20),
-              height: size.height * .12,
-              width: size.height * .12,
+              height: size.height * .1,
+              width: size.height * .1,
               margin: EdgeInsets.symmetric(horizontal: size.width * .01),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -236,7 +236,7 @@ Widget getSkillsColumn({
           children: [
             Container(
               width: size.width * .58,
-              height: size.height * .12,
+              height: size.height * .1,
               margin: EdgeInsets.symmetric(horizontal: size.width * .01),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -255,8 +255,8 @@ Widget getSkillsColumn({
             ),
             Container(
               padding: const EdgeInsets.all(20),
-              height: size.height * .12,
-              width: size.height * .12,
+              height: size.height * .1,
+              width: size.height * .1,
               margin: EdgeInsets.symmetric(horizontal: size.width * .01),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -275,7 +275,7 @@ Widget getSkillsColumn({
           children: [
             Container(
               width: size.width * .58,
-              height: size.height * .12,
+              height: size.height * .1,
               margin: EdgeInsets.symmetric(horizontal: size.width * .01),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -294,8 +294,8 @@ Widget getSkillsColumn({
             ),
             Container(
               padding: const EdgeInsets.all(20),
-              height: size.height * .12,
-              width: size.height * .12,
+              height: size.height * .1,
+              width: size.height * .1,
               margin: EdgeInsets.symmetric(horizontal: size.width * .01),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fsc_project/core/constants/app_color.dart';
 import 'package:fsc_project/feaure/view/home/CharacterScren/character_screen.dart';
+import 'package:fsc_project/feaure/view/home/NewsScreen/news_screen.dart';
+import 'package:fsc_project/feaure/view/home/WeaponScreen/weapon_screen.dart';
+import 'package:fsc_project/feaure/view/home/mapSreen/map_screen.dart';
+import 'package:fsc_project/feaure/widget/home_app_bar.dart';
 import 'package:fsc_project/feaure/widget/home_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,30 +13,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        leading: Image.asset(
-          "assets/logo/valo2.png",
-          fit: BoxFit.contain,
-        ),
-        centerTitle: true,
-        title: Text(
-          "Valorant Wiki",
-          style: getTextStyleHome(
-              fontSize: 24, color: AppColor.darkPrimaryGreyColor),
-        ),
-        actions: [
-          InkWell(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Image.asset(
-                "assets/logo/logout.png",
-                color: AppColor.darkPrimaryRedColor,
-                width: 30,
-                height: 30,
-              ),
-            ),
-          ),
-        ],
+      appBar: const PreferredSize(
+        preferredSize: Size(double.infinity, 65),
+        child: HomeAppBar(),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -62,7 +44,10 @@ class HomeScreen extends StatelessWidget {
               ),
               size: size,
               text: "Haritalar",
-              press: () {},
+              press: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MapScreen()));
+              },
             ),
             HomeCardsDesign(
               child: ClipRRect(
@@ -74,7 +59,12 @@ class HomeScreen extends StatelessWidget {
               ),
               size: size,
               text: "Silahlar",
-              press: () {},
+              press: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WeaponScreen()));
+              },
             ),
             HomeCardsDesign(
               child: ClipRRect(
@@ -86,7 +76,12 @@ class HomeScreen extends StatelessWidget {
               ),
               size: size,
               text: "Haberler",
-              press: () {},
+              press: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NewsScreen()));
+              },
             ),
           ],
         ),
