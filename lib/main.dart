@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fsc_project/feaure/view/splashScren/splash_scren.dart';
+import 'package:fsc_project/core/constants/app_color.dart';
+import 'package:fsc_project/feaure/view/splash/splash_scren.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Valorant Info',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          appBarTheme: const AppBarTheme(
+              backgroundColor: AppColor.darkPrimaryColor,
+              elevation: 2,
+              shadowColor: AppColor.darkPrimaryRedColor,
+              foregroundColor: AppColor.darkPrimaryGreyColor),
         ),
         home: const SplashScreen());
   }
