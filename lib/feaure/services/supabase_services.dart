@@ -1,4 +1,5 @@
 import 'package:fsc_project/core/constants/api_const.dart';
+import 'package:fsc_project/feaure/model/harita.dart';
 import 'package:fsc_project/feaure/model/karakter.dart';
 import 'package:fsc_project/feaure/model/silah.dart';
 import 'package:supabase/supabase.dart';
@@ -31,6 +32,21 @@ class SupabaseServices {
         silahList.add(silah);
       }
       return silahList;
+    } else {
+      throw Exception("Supabase getting data error:${response.error}");
+    }
+  }
+
+  Future<List<Harita>> getHarita() async {
+    final response = await supabase.from("map").select().execute();
+
+    if (response.status == 200) {
+      var haritaList = <Harita>[];
+      for (var element in (response.data as List)) {
+        Harita harita = Harita.fromJson(element);
+        haritaList.add(harita);
+      }
+      return haritaList;
     } else {
       throw Exception("Supabase getting data error:${response.error}");
     }

@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fsc_project/core/constants/app_color.dart';
 import 'package:fsc_project/feaure/model/silah.dart';
@@ -44,74 +45,41 @@ class _WeaponScreenState extends State<WeaponScreen> {
                 width: size.width,
                 height: size.height,
                 color: AppColor.darkPrimaryGreyColor,
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 400,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
-                  itemCount: snapshot.data!.length,
-                  itemBuilder: (context, index) {
-                    Silah silah = snapshot.data![index];
-                    return Container(
-                      margin: const EdgeInsets.all(16),
-                      decoration: const BoxDecoration(
-                        color: AppColor.darkPrimaryRedColor,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
+                child: CarouselSlider.builder(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index, realIndex) {
+                      Silah silah = snapshot.data![index];
+                      return Container(
+                        decoration: BoxDecoration(
+                          color: AppColor.darkPrimaryColor,
+                          border: Border.all(
+                            color: AppColor.darkPrimaryRedColor,
+                            width: .5,
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(20),
+                          ),
                         ),
-                      ),
-                      child: Column(
-                        children: [
-                          _getSilahAdiText(silah),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Image.asset(
-                            silah.photo.toString(),
-                            fit: BoxFit.contain,
-                            height: size.height * .1,
-                            width: size.width * .8,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              silah.aciklama.toString(),
-                              textAlign: TextAlign.center,
-                              style: _getTextStyle(
-                                fontSize: 16,
-                                color: AppColor.darkPrimaryGreyColor,
-                              ),
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 8),
+                        child: Column(
+                          children: [
+                            _getSilahAdiText(silah),
+                            const SizedBox(
+                              height: 12,
                             ),
-                          ),
-                          const Spacer(),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "TÜR // ",
-                                  style: _getTextStyle(
-                                      fontSize: 18,
-                                      color: AppColor.darkPrimaryColor),
-                                ),
-                                Text(
-                                  silah.tur.toString().toUpperCase(),
-                                  style: _getTextStyle(
-                                      fontSize: 18,
-                                      color: AppColor.darkPrimaryColor),
-                                ),
-                              ],
+                            _getSilahPhoto(silah, size),
+                            const SizedBox(
+                              height: 12,
                             ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                            _getSilahAciklama(silah),
+                            const Spacer(),
+                            _getSilahTur(silah, size),
+                          ],
+                        ),
+                      );
+                    },
+                    options: _carouselOptions(size)),
               );
             }
           }
@@ -121,14 +89,70 @@ class _WeaponScreenState extends State<WeaponScreen> {
   }
 }
 
+Widget _getSilahTur(Silah silah, Size size) => Container(
+      width: double.infinity,
+      height: size.height * .07,
+      decoration: const BoxDecoration(
+        color: AppColor.darkPrimaryRedColor,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "TÜR // ",
+            style:
+                _getTextStyle(fontSize: 18, color: AppColor.darkPrimaryColor),
+          ),
+          Text(
+            silah.tur.toString().toUpperCase(),
+            style:
+                _getTextStyle(fontSize: 18, color: AppColor.darkPrimaryColor),
+          ),
+        ],
+      ),
+    );
+
+Widget _getSilahAciklama(Silah silah) => Padding(
+      padding: const EdgeInsets.only(top: 16, right: 8, left: 8),
+      child: Text(
+        silah.aciklama.toString(),
+        textAlign: TextAlign.center,
+        style: _getTextStyle(
+          fontSize: 18,
+          color: AppColor.darkPrimaryGreyColor,
+        ),
+      ),
+    );
+
 Widget _getSilahAdiText(Silah silah) => Padding(
       padding: const EdgeInsets.all(16.0),
       child: Text(
-        "~ ${silah.isim.toString().toUpperCase()} ~",
+        " ${silah.isim.toString().toUpperCase()} ",
         style: _getTextStyle(
-          fontSize: 26,
-          color: AppColor.darkPrimaryColor,
+          fontSize: 28,
+          color: AppColor.darkPrimaryRedColor,
         ),
+      ),
+    );
+
+Widget _getSilahPhoto(Silah silah, Size size) => Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(
+          Radius.circular(20),
+        ),
+        border: Border.all(color: AppColor.darkPrimaryColor, width: .2),
+        color: AppColor.darkPrimaryGreyColor,
+      ),
+      child: Image.asset(
+        silah.photo.toString(),
+        fit: BoxFit.contain,
+        height: size.height * .13,
+        width: size.width * .9,
       ),
     );
 
@@ -141,3 +165,12 @@ TextStyle _getTextStyle({
         fontWeight: FontWeight.bold,
         color: color,
         fontFamily: "Comforta");
+
+CarouselOptions _carouselOptions(Size size) => CarouselOptions(
+      enableInfiniteScroll: true,
+      disableCenter: false,
+      enlargeCenterPage: true,
+      autoPlayCurve: Curves.fastOutSlowIn,
+      autoPlay: false,
+      scrollDirection: Axis.vertical,
+    );

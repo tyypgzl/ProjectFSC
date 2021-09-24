@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fsc_project/core/constants/app_color.dart';
 import 'package:fsc_project/feaure/view/home/CharacterScren/character_screen.dart';
 import 'package:fsc_project/feaure/view/home/NewsScreen/news_screen.dart';
 import 'package:fsc_project/feaure/view/home/WeaponScreen/weapon_screen.dart';
@@ -18,72 +19,79 @@ class HomeScreen extends StatelessWidget {
         child: HomeAppBar(),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            HomeCardsDesign(
-              size: size,
-              text: "Ajanlar",
-              press: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const CharacterScreen()));
-              },
-              child: Image.asset(
-                "assets/images/agents.png",
-                width: size.width * .75,
-              ),
-            ),
-            HomeCardsDesign(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
+        child: Container(
+          width: size.width,
+          height: size.height,
+          color: AppColor.darkPrimaryGreyColor,
+          child: Column(
+            children: [
+              HomeCardsDesign(
+                size: size,
+                text: "Ajanlar",
+                press: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CharacterScreen()));
+                },
                 child: Image.asset(
-                  "assets/images/home2.jpg",
+                  "assets/images/agents.png",
                   width: size.width * .75,
                 ),
               ),
-              size: size,
-              text: "Haritalar",
-              press: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const MapScreen()));
-              },
-            ),
-            HomeCardsDesign(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image.asset(
-                  "assets/images/home4.jpg",
-                  width: size.width * .75,
+              HomeCardsDesign(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image.asset(
+                    "assets/images/home2.jpg",
+                    width: size.width * .75,
+                  ),
                 ),
+                size: size,
+                text: "Haritalar",
+                press: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MapScreen()));
+                },
               ),
-              size: size,
-              text: "Silahlar",
-              press: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const WeaponScreen()));
-              },
-            ),
-            HomeCardsDesign(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: Image.asset(
-                  "assets/images/home5.jpg",
-                  width: size.width * .75,
+              HomeCardsDesign(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image.asset(
+                    "assets/images/home4.jpg",
+                    width: size.width * .75,
+                  ),
                 ),
+                size: size,
+                text: "Silahlar",
+                press: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WeaponScreen()));
+                },
               ),
-              size: size,
-              text: "Haberler",
-              press: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const NewsScreen()));
-              },
-            ),
-          ],
+              HomeCardsDesign(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image.asset(
+                    "assets/images/home5.jpg",
+                    width: size.width * .75,
+                  ),
+                ),
+                size: size,
+                text: "Haberler",
+                press: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NewsScreen()));
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -68,7 +68,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
                             color: AppColor.darkPrimaryColor,
                             border: Border.all(
                               color: AppColor.darkPrimaryRedColor,
-                              width: 1,
+                              width: .2,
                             ),
                             borderRadius: const BorderRadius.all(
                               Radius.circular(40),
@@ -77,25 +77,24 @@ class _CharacterScreenState extends State<CharacterScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              const SizedBox(
-                                height: 30,
-                              ),
                               Container(
-                                width: size.width * .6,
-                                height: size.height * .065,
+                                width: size.width * .8,
+                                height: size.height * .1,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
-                                  color: AppColor.darkPrimaryRedColor,
-                                  border: Border.all(
-                                      color: AppColor.darkPrimaryGreyColor,
-                                      width: 1),
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(20),
+                                  color: AppColor.darkPrimaryRedColor
+                                      .withOpacity(.8),
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(40),
+                                    topRight: Radius.circular(40),
+                                    bottomLeft: Radius.circular(3),
+                                    bottomRight: Radius.circular(3),
                                   ),
                                 ),
                                 child: Text(
                                   karakter.isim.toString().toUpperCase(),
-                                  style: getTextStyle(
+                                  textAlign: TextAlign.center,
+                                  style: _getTextStyle(
                                       fontsize: 32,
                                       color: AppColor.darkPrimaryColor),
                                 ),
@@ -114,9 +113,9 @@ class _CharacterScreenState extends State<CharacterScreen> {
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   side: const BorderSide(
-                                      color: AppColor.darkPrimaryGreyColor,
-                                      width: 1),
-                                  primary: AppColor.darkPrimaryColor,
+                                      color: AppColor.darkPrimaryRedColor,
+                                      width: .4),
+                                  primary: AppColor.darkPrimaryGreyColor,
                                   onPrimary: AppColor.darkPrimaryColor,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20)),
@@ -131,11 +130,22 @@ class _CharacterScreenState extends State<CharacterScreen> {
                                               CharacterDetailView(
                                                   karakter: karakter)));
                                 },
-                                child: Text(
-                                  "Detaylar",
-                                  style: getTextStyle(
-                                      fontsize: 28,
-                                      color: AppColor.darkPrimaryRedColor),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text(
+                                      "Detaylar",
+                                      style: _getTextStyle(
+                                          fontsize: 28,
+                                          color: AppColor.darkPrimaryRedColor),
+                                    ),
+                                    const Icon(
+                                      Icons.arrow_forward,
+                                      color: AppColor.darkPrimaryRedColor,
+                                      size: 40,
+                                    )
+                                  ],
                                 ),
                               ),
                             ],
@@ -143,7 +153,8 @@ class _CharacterScreenState extends State<CharacterScreen> {
                         );
                       },
                       options: CarouselOptions(
-                        autoPlay: false,
+                        autoPlay: true,
+                        autoPlayCurve: Curves.fastOutSlowIn,
                         enableInfiniteScroll: true,
                         disableCenter: true,
                         enlargeCenterPage: true,
@@ -163,7 +174,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
   }
 }
 
-TextStyle getTextStyle({required double fontsize, required Color color}) =>
+TextStyle _getTextStyle({required double fontsize, required Color color}) =>
     TextStyle(
         color: color,
         fontFamily: "Comforta",
