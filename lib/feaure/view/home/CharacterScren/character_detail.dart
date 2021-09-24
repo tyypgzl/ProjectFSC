@@ -54,6 +54,7 @@ class CharacterDetailView extends StatelessWidget {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
                         children: [
@@ -61,7 +62,7 @@ class CharacterDetailView extends StatelessWidget {
                             "İsim: ",
                             style: getTextStyle(
                                 color: AppColor.darkPrimaryRedColor,
-                                fontSize: 22),
+                                fontSize: 21),
                           ),
                           Text(
                             karakter.isim.toString(),
@@ -77,7 +78,7 @@ class CharacterDetailView extends StatelessWidget {
                             "Ülke: ",
                             style: getTextStyle(
                                 color: AppColor.darkPrimaryRedColor,
-                                fontSize: 22),
+                                fontSize: 21),
                           ),
                           Text(
                             karakter.ulke.toString(),
@@ -93,7 +94,7 @@ class CharacterDetailView extends StatelessWidget {
                             "Rol: ",
                             style: getTextStyle(
                                 color: AppColor.darkPrimaryRedColor,
-                                fontSize: 22),
+                                fontSize: 21),
                           ),
                           getSizedBoxHeight(10),
                           Text(
