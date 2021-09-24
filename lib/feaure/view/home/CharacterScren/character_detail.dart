@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:fsc_project/core/constants/app_color.dart';
 import 'package:fsc_project/feaure/model/karakter.dart';
+import 'package:octo_image/octo_image.dart';
 
 class CharacterDetailView extends StatelessWidget {
   final Karakter karakter;
@@ -43,12 +45,10 @@ class CharacterDetailView extends StatelessWidget {
               getSizedBoxHeight(size.height * .02),
               Row(
                 children: [
-                  Image.asset(
-                    karakter.photo.toString(),
-                    fit: BoxFit.cover,
-                    height: size.height * .33,
-                    color: AppColor.darkPrimaryColor,
-                  ),
+                  _getOctoImageCharacter(
+                      karakter: karakter,
+                      size: size,
+                      hash: "TtNK9jM{~qRiayt7xuofM{xuayWB"),
                   SizedBox(
                     width: size.width * .04,
                   ),
@@ -184,10 +184,7 @@ Widget getSkillsColumn({
                 borderRadius: BorderRadius.circular(20),
                 color: AppColor.darkPrimaryRedColor,
               ),
-              child: Image.asset(
-                karakter.skill1Url.toString(),
-                width: size.width * .05,
-              ),
+              child: _getOctoImageSkill1(karakter: karakter, size: size),
             ),
           ],
         ),
@@ -223,10 +220,7 @@ Widget getSkillsColumn({
                 borderRadius: BorderRadius.circular(20),
                 color: AppColor.darkPrimaryRedColor,
               ),
-              child: Image.asset(
-                karakter.skill2Url.toString(),
-                width: size.width * .05,
-              ),
+              child: _getOctoImageSkill2(karakter: karakter, size: size),
             ),
           ],
         ),
@@ -262,10 +256,7 @@ Widget getSkillsColumn({
                 borderRadius: BorderRadius.circular(20),
                 color: AppColor.darkPrimaryRedColor,
               ),
-              child: Image.asset(
-                karakter.skill3Url.toString(),
-                width: size.width * .05,
-              ),
+              child: _getOctoImageSkill3(karakter: karakter, size: size),
             ),
           ],
         ),
@@ -301,12 +292,112 @@ Widget getSkillsColumn({
                 borderRadius: BorderRadius.circular(20),
                 color: AppColor.darkPrimaryRedColor,
               ),
-              child: Image.asset(
-                karakter.ultiUrl.toString(),
-                width: size.width * .05,
-              ),
+              child: _getOctoImageSkill4(karakter: karakter, size: size),
             ),
           ],
         ),
       ],
+    );
+
+OctoImage _getOctoImageCharacter(
+        {required Karakter karakter,
+        required Size size,
+        required String hash}) =>
+    OctoImage(
+      image: CachedNetworkImageProvider(
+        karakter.photo.toString(),
+      ),
+      fit: BoxFit.cover,
+      height: size.height * .33,
+      color: AppColor.darkPrimaryColor,
+      placeholderBuilder: OctoPlaceholder.blurHash(hash, fit: BoxFit.cover),
+      errorBuilder: OctoError.icon(color: AppColor.darkPrimaryGreyColor),
+    );
+
+OctoImage _getOctoImageSkill1({
+  required Karakter karakter,
+  required Size size,
+}) =>
+    OctoImage(
+      image: CachedNetworkImageProvider(
+        karakter.skill1Url.toString(),
+      ),
+      fit: BoxFit.cover,
+      width: size.width * .05,
+      color: AppColor.darkPrimaryGreyColor,
+      placeholderBuilder: OctoPlaceholder.circleAvatar(
+        backgroundColor: AppColor.darkPrimaryRedColor,
+        text: const Icon(
+          Icons.restart_alt,
+          color: AppColor.darkPrimaryGreyColor,
+          size: 30,
+        ),
+      ),
+      errorBuilder: OctoError.icon(color: AppColor.darkPrimaryGreyColor),
+    );
+
+OctoImage _getOctoImageSkill2({
+  required Karakter karakter,
+  required Size size,
+}) =>
+    OctoImage(
+      image: CachedNetworkImageProvider(
+        karakter.skill2Url.toString(),
+      ),
+      fit: BoxFit.cover,
+      width: size.width * .05,
+      color: AppColor.darkPrimaryGreyColor,
+      placeholderBuilder: OctoPlaceholder.circleAvatar(
+        backgroundColor: AppColor.darkPrimaryRedColor,
+        text: const Icon(
+          Icons.restart_alt,
+          color: AppColor.darkPrimaryGreyColor,
+          size: 30,
+        ),
+      ),
+      errorBuilder: OctoError.icon(color: AppColor.darkPrimaryGreyColor),
+    );
+
+OctoImage _getOctoImageSkill3({
+  required Karakter karakter,
+  required Size size,
+}) =>
+    OctoImage(
+      image: CachedNetworkImageProvider(
+        karakter.skill3Url.toString(),
+      ),
+      fit: BoxFit.cover,
+      width: size.width * .05,
+      color: AppColor.darkPrimaryGreyColor,
+      placeholderBuilder: OctoPlaceholder.circleAvatar(
+        backgroundColor: AppColor.darkPrimaryRedColor,
+        text: const Icon(
+          Icons.restart_alt,
+          color: AppColor.darkPrimaryGreyColor,
+          size: 30,
+        ),
+      ),
+      errorBuilder: OctoError.icon(color: AppColor.darkPrimaryGreyColor),
+    );
+
+OctoImage _getOctoImageSkill4({
+  required Karakter karakter,
+  required Size size,
+}) =>
+    OctoImage(
+      image: CachedNetworkImageProvider(
+        karakter.ultiUrl.toString(),
+      ),
+      fit: BoxFit.cover,
+      width: size.width * .05,
+      color: AppColor.darkPrimaryGreyColor,
+      placeholderBuilder: OctoPlaceholder.circleAvatar(
+        backgroundColor: AppColor.darkPrimaryRedColor,
+        text: const Icon(
+          Icons.restart_alt,
+          color: AppColor.darkPrimaryGreyColor,
+          size: 30,
+        ),
+      ),
+      errorBuilder: OctoError.icon(color: AppColor.darkPrimaryGreyColor),
     );

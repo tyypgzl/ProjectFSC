@@ -1,10 +1,13 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fsc_project/core/constants/app_color.dart';
+import 'package:fsc_project/core/constants/character_const.dart';
 import 'package:fsc_project/feaure/model/karakter.dart';
 import 'package:fsc_project/feaure/services/supabase_services.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fsc_project/feaure/view/home/CharacterScren/character_detail.dart';
+import 'package:octo_image/octo_image.dart';
 
 class CharacterScreen extends StatefulWidget {
   const CharacterScreen({Key? key}) : super(key: key);
@@ -102,10 +105,17 @@ class _CharacterScreenState extends State<CharacterScreen> {
                               const SizedBox(
                                 height: 30,
                               ),
-                              Image.asset(
-                                karakter.photo.toString(),
+                              OctoImage(
+                                image: CachedNetworkImageProvider(
+                                  karakter.photo.toString(),
+                                ),
                                 fit: BoxFit.cover,
                                 height: size.height * .55,
+                                placeholderBuilder: OctoPlaceholder.blurHash(
+                                    CharacterConst.photoBlurHash,
+                                    fit: BoxFit.cover),
+                                errorBuilder: OctoError.icon(
+                                    color: AppColor.darkPrimaryRedColor),
                               ),
                               const SizedBox(
                                 height: 30,
@@ -152,16 +162,7 @@ class _CharacterScreenState extends State<CharacterScreen> {
                           ),
                         );
                       },
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        enableInfiniteScroll: true,
-                        disableCenter: true,
-                        enlargeCenterPage: true,
-                        height: size.height * .82,
-                        aspectRatio: .1,
-                        initialPage: 0,
-                      ),
+                      options: _getCarouselOptions(size),
                     )
                   ],
                 ),
@@ -180,3 +181,14 @@ TextStyle _getTextStyle({required double fontsize, required Color color}) =>
         fontFamily: "Comforta",
         fontSize: fontsize,
         fontWeight: FontWeight.bold);
+
+CarouselOptions _getCarouselOptions(Size size) => CarouselOptions(
+      autoPlay: true,
+      autoPlayCurve: Curves.fastOutSlowIn,
+      enableInfiniteScroll: true,
+      disableCenter: true,
+      enlargeCenterPage: true,
+      height: size.height * .82,
+      aspectRatio: .1,
+      initialPage: 0,
+    );

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fsc_project/core/constants/app_color.dart';
@@ -5,6 +6,7 @@ import 'package:fsc_project/feaure/model/harita.dart';
 import 'package:fsc_project/feaure/services/supabase_services.dart';
 
 import 'package:fsc_project/feaure/widget/custom_app_bar.dart';
+import 'package:octo_image/octo_image.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -87,16 +89,24 @@ class _MapScreenState extends State<MapScreen> {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Image.asset(
-                                    harita.photo.toString(),
-                                    fit: BoxFit.contain,
-                                    width: size.width * 2,
-                                  ),
-                                ),
+                              CachedNetworkImage(
+                                imageUrl: harita.photo.toString(),
+                                fit: BoxFit.cover,
+                                placeholder: (context, url) {
+                                  return SizedBox(
+                                    width: size.width * .5,
+                                    height: size.height * .25,
+                                    child: const Center(
+                                      child: CircularProgressIndicator(
+                                        color: AppColor.darkPrimaryRedColor,
+                                        backgroundColor:
+                                            AppColor.darkPrimaryGreyColor,
+                                      ),
+                                    ),
+                                  );
+                                },
+                                errorWidget: (context, url, error) =>
+                                    const Icon(Icons.error),
                               ),
                               const SizedBox(
                                 height: 10,
@@ -144,3 +154,14 @@ TextStyle _getTextStyle({required double fontsize, required Color color}) =>
         fontFamily: "Comforta",
         fontSize: fontsize,
         fontWeight: FontWeight.bold);
+
+OctoImage _getOctoImage(
+        {required String url, required Size size, required String hash}) =>
+    OctoImage(
+      image: CachedNetworkImageProvider(
+        url,
+      ),
+      fit: BoxFit.contain,
+      placeholderBuilder: OctoPlaceholder.blurHash(hash, fit: BoxFit.cover),
+      errorBuilder: OctoError.icon(color: AppColor.darkPrimaryRedColor),
+    );

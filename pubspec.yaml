@@ -37,6 +37,8 @@ dependencies:
   introduction_screen: ^2.1.0
   supabase: ^0.2.6
   carousel_slider: ^4.0.0
+  cached_network_image: ^3.1.0
+  octo_image: ^1.0.0+1
 
 dev_dependencies:
   flutter_test:
@@ -63,9 +65,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/logo/
-    - assets/images/
-    - assets/images/weapon/
-    - assets/images/maps/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

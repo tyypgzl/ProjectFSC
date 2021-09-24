@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fsc_project/core/constants/app_color.dart';
@@ -54,7 +55,6 @@ class _WeaponScreenState extends State<WeaponScreen> {
                           color: AppColor.darkPrimaryColor,
                           border: Border.all(
                             color: AppColor.darkPrimaryRedColor,
-                            width: .5,
                           ),
                           borderRadius: const BorderRadius.all(
                             Radius.circular(20),
@@ -90,8 +90,8 @@ class _WeaponScreenState extends State<WeaponScreen> {
 }
 
 Widget _getSilahTur(Silah silah, Size size) => Container(
-      width: double.infinity,
-      height: size.height * .07,
+      height: size.height * .067,
+      alignment: Alignment.center,
       decoration: const BoxDecoration(
         color: AppColor.darkPrimaryRedColor,
         borderRadius: BorderRadius.only(
@@ -99,20 +99,9 @@ Widget _getSilahTur(Silah silah, Size size) => Container(
           bottomRight: Radius.circular(20),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "TÜR // ",
-            style:
-                _getTextStyle(fontSize: 18, color: AppColor.darkPrimaryColor),
-          ),
-          Text(
-            silah.tur.toString().toUpperCase(),
-            style:
-                _getTextStyle(fontSize: 18, color: AppColor.darkPrimaryColor),
-          ),
-        ],
+      child: Text(
+        "TÜR // " + silah.tur.toString().toUpperCase(),
+        style: _getTextStyle(fontSize: 18, color: AppColor.darkPrimaryColor),
       ),
     );
 
@@ -148,11 +137,17 @@ Widget _getSilahPhoto(Silah silah, Size size) => Container(
         border: Border.all(color: AppColor.darkPrimaryColor, width: .2),
         color: AppColor.darkPrimaryGreyColor,
       ),
-      child: Image.asset(
-        silah.photo.toString(),
-        fit: BoxFit.contain,
+      child: CachedNetworkImage(
+        imageUrl: silah.photo.toString(),
         height: size.height * .13,
         width: size.width * .9,
+        placeholder: (context, url) => const Center(
+          child: CircularProgressIndicator(
+            color: AppColor.darkPrimaryRedColor,
+            backgroundColor: AppColor.darkPrimaryGreyColor,
+          ),
+        ),
+        errorWidget: (context, url, error) => const Icon(Icons.error),
       ),
     );
 

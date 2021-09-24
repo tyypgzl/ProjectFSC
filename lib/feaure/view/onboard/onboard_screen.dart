@@ -1,8 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fsc_project/core/constants/app_color.dart';
+import 'package:fsc_project/core/constants/onboard_const.dart';
 import 'package:fsc_project/feaure/view/home/homeScreen/home_screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:octo_image/octo_image.dart';
 
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({Key? key}) : super(key: key);
@@ -41,24 +44,24 @@ class _OnboardScreenState extends State<OnboardScreen> {
 
 var pageViewModelList = <PageViewModel>[
   PageViewModel(
-    title: "LIMIT TANIMA",
-    body:
-        "Küresel, rekabetçi bir sahnede tarzını ve deneyimini birleştir. Silahlarla ve taktiksel yeteneklerle saldırıp savunma yapacağın 13 tur var. Her turda tek bir cana sahip olduğun için hayatta kalmak istiyorsan rakiplerinden daha hızlı düşünmen gerekir.",
-    image: getImage1("onboard"),
+    title: OnboardConst.onboard1Title,
+    body: OnboardConst.onboard1Body,
+    image: _getOctoImage(
+        url: OnboardConst.onboard1Photo, hash: "LhNmyhRj~qxujGWBtQoz_3ofIoo2"),
     decoration: getPageDecorations(),
   ),
   PageViewModel(
-    title: "SENIN AJANLARIN",
-    body:
-        "İş silahlar ve mermilerle bitmiyor; duruma uyum sağlayan, çevik ve ölümcül yetenekleri olan ajanlardan birini seç ve kendini gösterebileceğin anları kolla. Her ajan bambaşka şekilde oynanır ve tüm önemli anlar birbirinden farklı olur.",
-    image: getImage2("raze"),
+    title: OnboardConst.onboard2Title,
+    body: OnboardConst.onboard2Body,
+    image: _getOctoImage(
+        url: OnboardConst.onboard2Photo, hash: "TgOpx%kD~q%2ozkC-;xuIUbFWCV@"),
     decoration: getPageDecorations(),
   ),
   PageViewModel(
-    title: "SENİN HARITALARIN",
-    body:
-        "Tüm haritalar yaratıcı düşünme becerisini öne çıkaracak bir alan görevi görür. Her biri takım stratejileri, muhteşem oyunlar ve ucu ucuna geçen karşılaşmalar için özel olarak tasarlanmıştır. Diğerlerinin yıllar boyunca taklit edeceği hareketler gerçekleştir.",
-    image: getImage3("map3"),
+    title: OnboardConst.onboard3Title,
+    body: OnboardConst.onboard3Body,
+    image: _getOctoImage(
+        url: OnboardConst.onboard3Photo, hash: "TXKKQNx]Rk.T%2%M_3R+o#?boexa"),
     decoration: getPageDecorations(),
   ),
 ];
@@ -98,29 +101,12 @@ DotsDecorator getDotDecorations() => DotsDecorator(
     ),
     color: AppColor.darkPrimaryColor);
 
-Image getImage1(
-  String url,
-) =>
-    Image.asset(
-      "assets/images/$url.png",
-      width: 310,
+OctoImage _getOctoImage({required String url, required String hash}) =>
+    OctoImage(
+      image: CachedNetworkImageProvider(
+        url,
+      ),
       fit: BoxFit.cover,
-    );
-
-Image getImage2(
-  String url,
-) =>
-    Image.asset(
-      "assets/images/$url.png",
-      height: 400,
-      fit: BoxFit.cover,
-    );
-
-Image getImage3(
-  String url,
-) =>
-    Image.asset(
-      "assets/images/$url.png",
-      width: 350,
-      fit: BoxFit.cover,
+      placeholderBuilder: OctoPlaceholder.blurHash(hash, fit: BoxFit.cover),
+      errorBuilder: OctoError.icon(color: AppColor.darkPrimaryRedColor),
     );
