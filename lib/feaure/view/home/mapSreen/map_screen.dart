@@ -6,7 +6,6 @@ import 'package:fsc_project/feaure/model/harita.dart';
 import 'package:fsc_project/feaure/services/supabase_services.dart';
 
 import 'package:fsc_project/feaure/widget/custom_app_bar.dart';
-import 'package:octo_image/octo_image.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -154,14 +153,3 @@ TextStyle _getTextStyle({required double fontsize, required Color color}) =>
         fontFamily: "Comforta",
         fontSize: fontsize,
         fontWeight: FontWeight.bold);
-
-OctoImage _getOctoImage(
-        {required String url, required Size size, required String hash}) =>
-    OctoImage(
-      image: CachedNetworkImageProvider(
-        url,
-      ),
-      fit: BoxFit.contain,
-      placeholderBuilder: OctoPlaceholder.blurHash(hash, fit: BoxFit.cover),
-      errorBuilder: OctoError.icon(color: AppColor.darkPrimaryRedColor),
-    );
