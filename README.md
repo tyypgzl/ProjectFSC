@@ -1,5 +1,5 @@
 # Valorant Wiki
-![Valorant](https://www.esports.net/wp-content/uploads/2021/07/Valorant-Agents.jpg)
+![Valorant](https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/valorant_readme.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvdmFsb3JhbnRfcmVhZG1lLmpwZyIsImlhdCI6MTYzMjU2NTA0OCwiZXhwIjoxOTQ3OTI1MDQ4fQ.WPgPTqn5bpxN-zuBumtlwrTWMWy3pJCc1_gUHp5InWk)
 
 
 Yeni Flutter projem çok fazla zaman geçidiğim bir oyun olan **Valorant**'a ait Wiki. Oyun hakkında bilgilendirici içerikler,haberler bulunan projem gelişmeye açık ve geliştirmeye devam edeceğim.
@@ -12,7 +12,7 @@ Onboard Screen tasarımı için [Introduction Screen](https://pub.dev/packages/i
 
 Karakter sayfasında slider card tasarımı için [Carousel Slider](https://pub.dev/packages/carousel_slider) paketini kullandım.
 
-![Carousel Slider Örngi](https://raw.githubusercontent.com/serenader2014/flutter_carousel_slider/master/screenshot/fullscreen.gif)
+![Carousel Slider Örngi](https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/carousel_Slider.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvY2Fyb3VzZWxfU2xpZGVyLmdpZiIsImlhdCI6MTYzMjU2NDk5MiwiZXhwIjoxOTQ3OTI0OTkyfQ.iocP8sobn2calIMHDlNzFfDDn9MPvWQC_6n1oIryF_I)
 
 Supabase ile bağlantı kurmak için [Supabase](https://pub.dev/packages/supabase) paketini kullandım.
 
@@ -30,7 +30,7 @@ Fotograflar internet üzerinden alındığı için gecikmeler oluyor ve bunun da
 
 Uygulamanın apk çıktısını alıp kullanabilmek için bazı izinler gerekiyor.Gerekli olacak tüm [Android İzinilerini](https://medium.com/gokhanyavas/android-permission-android-izinleri-903c4dd7c43) buradan bakabilirsiniz. Bu izinleri yazacağınız yer ise Flutter özelinde Android/app/src/main/AndroidMainfest.xml dosyasıdır. İzinler application tagının üzerinde manifest xmlns:android dizininin içerisinde olmalıdır. 
 
-![Manifest Örnegi](https://miro.medium.com/max/700/1*abvk2AuTQrTabpHVrcGhag.png)
+![Manifest Örnegi](https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/readme_manifest.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvcmVhZG1lX21hbmlmZXN0LnBuZyIsImlhdCI6MTYzMjU2NTAzNywiZXhwIjoxOTQ3OTI1MDM3fQ.FxRlwG39eqEt6HBB1igYhqa2KNf0CA9Kk8ubkZQGvJw)
 
 Uygulamaya Icon eklemek için [Flutter Launcher Icon](https://pub.dev/packages/flutter_launcher_icons) paketini kullandım.
 
