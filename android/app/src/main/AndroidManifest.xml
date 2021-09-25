@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fsc_project">
+    
+   <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="Valorant Wiki"
         android:icon="@mipmap/launcher_icon">
@@ -30,12 +33,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
-                
-                
-                
-                <data
-                    android:scheme="io.supabase.flutterquickstart"
-                    android:host="login-callback" />
+
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

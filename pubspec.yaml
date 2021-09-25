@@ -43,7 +43,7 @@ dependencies:
 
 flutter_icons:
   android: "launcher_icon"
-  image_path: "assets/logo/valo2.png"
+  image_path: "assets/logo/valorant_wiki.png"
   
 
 dev_dependencies:
