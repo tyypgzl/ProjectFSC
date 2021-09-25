@@ -52,5 +52,11 @@ Projede [Comforta](https://www.dafont.com/comfortaa.font) fontunu kullandım.
 
 4-Skillerin kullanım videosu eklenecek.
 
+5-Haber Sayfası eklenecek.
+
+## İndirme Linki
+
+  [Valorant Wiki](https://dosya.co/k63k089x43cs/valorant_Wiki.apk.html)
+
 
 
