@@ -11,7 +11,7 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: Image.asset(
-        "assets/logo/valo2.png",
+        "assets/logo/valorant_wiki.png",
         fit: BoxFit.contain,
       ),
       centerTitle: true,
