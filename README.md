@@ -1,5 +1,5 @@
 # Valorant Wiki
-![Valorant](https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/valorant_readme.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvdmFsb3JhbnRfcmVhZG1lLmpwZyIsImlhdCI6MTYzMjU2NTA0OCwiZXhwIjoxOTQ3OTI1MDQ4fQ.WPgPTqn5bpxN-zuBumtlwrTWMWy3pJCc1_gUHp5InWk)
+<img src="https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/valorant_readme.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvdmFsb3JhbnRfcmVhZG1lLmpwZyIsImlhdCI6MTYzMjU2NTA0OCwiZXhwIjoxOTQ3OTI1MDQ4fQ.WPgPTqn5bpxN-zuBumtlwrTWMWy3pJCc1_gUHp5InWk" width="900" />
 
 
 Yeni Flutter projem çok fazla zaman geçidiğim bir oyun olan **Valorant**'a ait Wiki. Oyun hakkında bilgilendirici içerikler,haberler bulunan projem gelişmeye açık ve geliştirmeye devam edeceğim.
@@ -12,7 +12,7 @@ Onboard Screen tasarımı için [Introduction Screen](https://pub.dev/packages/i
 
 Karakter sayfasında slider card tasarımı için [Carousel Slider](https://pub.dev/packages/carousel_slider) paketini kullandım.
 
-![Carousel Slider Örngi](https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/carousel_Slider.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvY2Fyb3VzZWxfU2xpZGVyLmdpZiIsImlhdCI6MTYzMjU2NDk5MiwiZXhwIjoxOTQ3OTI0OTkyfQ.iocP8sobn2calIMHDlNzFfDDn9MPvWQC_6n1oIryF_I)
+<img src="https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/carousel_Slider.gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvY2Fyb3VzZWxfU2xpZGVyLmdpZiIsImlhdCI6MTYzMjU2NDk5MiwiZXhwIjoxOTQ3OTI0OTkyfQ.iocP8sobn2calIMHDlNzFfDDn9MPvWQC_6n1oIryF_I" width="200" height="400" />
 
 Supabase ile bağlantı kurmak için [Supabase](https://pub.dev/packages/supabase) paketini kullandım.
 
@@ -53,6 +53,13 @@ Projede [Comforta](https://www.dafont.com/comfortaa.font) fontunu kullandım.
 4-Skillerin kullanım videosu eklenecek.
 
 5-Haber Sayfası eklenecek.
+
+## uygulama içi görüntüler
+<img src="https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/onboard.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3Mvb25ib2FyZC5wbmciLCJpYXQiOjE2MzMyODAzOTAsImV4cCI6MTk0ODY0MDM5MH0.GXS-U5xvxLJ6Q_nk1w1GDt0rTEGAh4_ZJ6UI31IA1F0"  width="180" height="400" />,
+<img src="https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/menu.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvbWVudS5wbmciLCJpYXQiOjE2MzMyODE2MTMsImV4cCI6MTk0ODY0MTYxM30.KP83DRdCfkZrKQeqRSSkimNN5Swp8sGiTq5PSWaj5K4"  width="180" height="400" />,
+<img src="https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/character.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvY2hhcmFjdGVyLnBuZyIsImlhdCI6MTYzMzI4MTYyMiwiZXhwIjoxOTQ4NjQxNjIyfQ.AOCuVmV8Ttq2KIFBeivzM-yj3MDR_Ni5CU2GTVDsFlE"  width="180" height="400" />,
+<img src="https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/map.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvbWFwLnBuZyIsImlhdCI6MTYzMzI4MTYzMiwiZXhwIjoxOTQ4NjQxNjMyfQ.ncmGQjFmSHhQFaFJOwI6i7w1aSE9A3npv-LbC5NbDWE"  width="180" height="400" />,
+<img src="https://wdgbdjqczgdpodxvxfwj.supabase.in/storage/v1/object/sign/valorant/readmePhotos/map.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2YWxvcmFudC9yZWFkbWVQaG90b3MvbWFwLnBuZyIsImlhdCI6MTYzMzI4MTYzMiwiZXhwIjoxOTQ4NjQxNjMyfQ.ncmGQjFmSHhQFaFJOwI6i7w1aSE9A3npv-LbC5NbDWE"  width="180" height="400" />,
 
 ## İndirme Linki
 
