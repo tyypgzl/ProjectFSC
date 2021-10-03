@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fsc_project/core/constants/app_color.dart';
-import 'package:fsc_project/feaure/view/splash/splash_scren.dart';
+
+import 'feaure/view/splashScreen/splash_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Valorant Info',
         theme: ThemeData(
+          fontFamily: "Comforta",
           appBarTheme: const AppBarTheme(
               backgroundColor: AppColor.darkPrimaryColor,
               elevation: 2,
